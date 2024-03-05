@@ -1,0 +1,8 @@
+# BlueJ files
+*.ctxt
+
+# Compiled class file
+*.class
+
+# Example data folder from https://www.dukelearntoprogram.com
+data/
