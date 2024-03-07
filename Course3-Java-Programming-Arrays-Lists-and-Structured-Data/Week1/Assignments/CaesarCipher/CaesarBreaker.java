@@ -28,8 +28,7 @@ public class CaesarBreaker
     {
         int[] ans = new int[26];
         for (char ch: s.toLowerCase().toCharArray()) {
-            if (! Character.isLetter(ch)) continue;
-            ans[ch - 'a']++;
+            if (Character.isLetter(ch)) ans[ch - 'a']++;
         }
         
         return ans;
@@ -37,8 +36,7 @@ public class CaesarBreaker
     
     public int maxIndex(int[] values)
     {
-        int ans = 0;
-        int max = 0;
+        int ans = 0, max = 0;
         for (int i = 0; i < values.length; i++) {
             if (values[i] > max) {
                 max = values[i];
