@@ -213,17 +213,4 @@ public class AllGenes
         testFindStop();
         testAllGenes();
     }
-
-    public void testQuiz() {
-        FileResource fr = new FileResource();
-        String dna = fr.asString().toUpperCase();
-        StorageResource genes = allGenes(dna);
-
-        System.out.println("DNA: " + dna);
-        System.out.println("Genes: " + genes.size());
-        System.out.println("Greater than length: " + longerThanLength(genes, 60));
-        System.out.println("Greater than cgRatio: " + greaterThanCgRatio(genes, 0.35));
-        System.out.println("CTG count: " + countCodon(dna,"CTG"));
-        System.out.println("Longest gene length: " + longestGeneLength(genes));
-    }
 }

@@ -189,9 +189,6 @@ public class BabyBirths {
     }
 
     public void testGetRank() {
-        //int ans = getRank(1971, "Frank", "M");
-        //System.out.println("quiz: " + ans);
-        
         int expected = 2;
         int actual = getRank(2012, "Mason", "M");
         String result = actual == expected ? "Passed" : "Failure";
@@ -212,9 +209,6 @@ public class BabyBirths {
     }
 
     public void testGetName() {
-        //String ans = getName(1982, 450, "M");
-        //System.out.println("quiz: " + ans);
-        
         String expected = "Mason";
         String actual = getName(2012, 2, "M");
         String result = actual.equals(expected) ? "Passed" : "Failure";
@@ -235,9 +229,6 @@ public class BabyBirths {
     }
 
     public void testWhatIsNameInYear() {
-        //String ans = whatIsNameInYear("Susan", 1972, 2014, "F");
-        //System.out.println("quiz: " + ans);
-        
         String expected = "Isabella born in 2012 would be Sophia if she was born in 2014.";
         String actual = whatIsNameInYear("Isabella", 2012, 2014, "F");
         String result = actual.equals(expected) ? "Passed" : "Failure";
@@ -249,10 +240,6 @@ public class BabyBirths {
     }
 
     public void testYearOfHighestRank() {
-        //int[] years = IntStream.rangeClosed(1880, 2014).toArray();
-        //int ans = yearOfHighestRank("Mich", "M", years);
-        //System.out.println("quiz: " + ans);
-        
         int expected = 2012;
         int actual = yearOfHighestRank("Mason", "M", new int[]{2012, 2013, 2014});
         String result = actual == expected ? "Passed" : "Failure";
@@ -273,10 +260,6 @@ public class BabyBirths {
     }
 
     public void testGetAverageRank() {
-        //int[] years = IntStream.rangeClosed(1880, 2014).toArray();
-        //double ans = getAverageRank("Robert", "M", years);
-        //System.out.println("quiz: " + ans);
-        
         double expected = 3.0;
         double actual = getAverageRank("Mason", "M", new int[]{2012, 2013, 2014});
         actual = Math.floor(actual * 100.0) / 100.0;
@@ -299,9 +282,6 @@ public class BabyBirths {
     }
 
     public void testGetTotalBirthsRankedHigher() {
-        //int ans = getTotalBirthsRankedHigher(1990, "Drew", "M");
-        //System.out.println("quiz: " + ans);
-
         int expected = 15;
         int actual = getTotalBirthsRankedHigher(2012, "Ethan", "M");
         String result = actual == expected ? "Passed" : "Failure";

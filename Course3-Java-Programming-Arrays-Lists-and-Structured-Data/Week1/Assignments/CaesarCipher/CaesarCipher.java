@@ -133,14 +133,4 @@ public class CaesarCipher
         testEncryptTwoKeys();
         
     }
-    
-    public void quiz()
-    {
-        String input = "At noon be in the conference room with your hat on for a surprise party. YELL LOUD!";
-        String output = encrypt(input, 15);
-        System.out.println(output);
-        
-        output = encryptTwoKeys(input, 8, 21);
-        System.out.println(output);
-    }
 }
