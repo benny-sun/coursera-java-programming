@@ -48,7 +48,7 @@ public class WordFrequencies
                 max = freq;
                 topWord = word;
             }
-            System.out.println(freq + " " + word);
+            //System.out.println(freq + " " + word);
         }
         System.out.println("The word that occurs most often and its count are: " + topWord + " " + max);
     }
