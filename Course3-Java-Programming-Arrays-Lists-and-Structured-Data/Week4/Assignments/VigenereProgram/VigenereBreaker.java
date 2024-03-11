@@ -31,10 +31,10 @@ public class VigenereBreaker
 
     public void breakVigenere(String filename)
     {
+        String[] languages = {"Danish", "Dutch", "English", "French", "German", "Italian", "Portuguese", "Spanish"};
         FileResource fr = new FileResource(filename);
-        HashSet<String> dictionary = readDictionary(new FileResource("dictionaries/English"));
-        String actual = breakForLanguage(fr.asString(), dictionary);
-        //System.out.println(actual);
+        String actual = breakForAllLangs(fr.asString(), languages);
+        System.out.println(actual);
     }
     
     public HashSet<String> readDictionary(FileResource fr)
@@ -49,8 +49,9 @@ public class VigenereBreaker
     
     public String breakForLanguage(String encrypted, HashSet<String> dictionary)
     {
+        char ch = mostCommonCharIn(dictionary);
         for (int i = 1; i < encrypted.length(); i++) {
-            int[] keys = tryKeyLength(encrypted, i, 'e');
+            int[] keys = tryKeyLength(encrypted, i, ch);
             VigenereCipher vc = new VigenereCipher(keys);
             String decrypted = vc.decrypt(encrypted);
             
@@ -77,5 +78,47 @@ public class VigenereBreaker
         }
         
         return ans;
+    }
+    
+    public char mostCommonCharIn(HashSet<String> dictionary)
+    {
+        HashMap<Character, Integer> table = new HashMap<>();
+        
+        // calculate all number of each characters
+        for (String word: dictionary) {
+            for (char ch: word.toLowerCase().toCharArray()) {
+                if (Character.isLetter(ch)) {
+                    int plusOne = table.getOrDefault(ch, 0) + 1;
+                    table.put(ch, plusOne);
+                }
+            }
+        }
+        
+        // find the maximum
+        char ans = 0;
+        int max = 0;
+        for (char ch: table.keySet()) {
+            if (table.get(ch) > max) {
+                max = table.get(ch);
+                ans = ch;
+            }
+        }
+        
+        return ans;
+    }
+    
+    public String breakForAllLangs(String encrypted, String[] languages)
+    {
+        for (String lang: languages) {
+            System.out.println(lang);
+            FileResource fr = new FileResource("dictionaries/" + lang);
+            HashSet<String> dictionary = readDictionary(fr);
+            String decrypted = breakForLanguage(encrypted, dictionary);
+            if (! decrypted.isEmpty()) {
+                return decrypted;
+            }
+        }
+
+        return "";
     }
 }
