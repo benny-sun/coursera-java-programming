@@ -59,4 +59,54 @@ public class Tester
         actual = sut.countUniqueIPsInRange(300, 399);
         System.out.println("300 to 399: " + actual);
     }
+    
+    public void testCountVisitsPerIP()
+    {
+        LogAnalyzer sut = new LogAnalyzer();
+        sut.readFile("testing/weblog3-short_log");
+        HashMap<String, Integer> actual = sut.countVisitsPerIP();
+        System.out.println(actual);
+        
+    }
+    
+    public void testMostNumberVisitsByIP()
+    {
+        LogAnalyzer sut = new LogAnalyzer();
+        sut.readFile("testing/weblog3-short_log");
+        int actual = sut.mostNumberVisitsByIP(sut.countVisitsPerIP());
+        System.out.println("Most number visits by IP is " + actual);
+    }
+    
+    public void testIpsMostVisits()
+    {
+        LogAnalyzer sut = new LogAnalyzer();
+        sut.readFile("testing/weblog3-short_log");
+        ArrayList<String> actual = sut.iPsMostVisits(sut.countVisitsPerIP());
+        System.out.println("IPs most visits " + actual);
+    }
+    
+    public void testIpsForDays()
+    {
+        LogAnalyzer sut = new LogAnalyzer();
+        sut.readFile("testing/weblog3-short_log");
+        HashMap<String, ArrayList<String>> actual = sut.iPsForDays();
+        System.out.println("IPs for days " + actual);
+    }
+    
+    public void testDayWithMostIPVisits()
+    {
+        LogAnalyzer sut = new LogAnalyzer();
+        sut.readFile("testing/weblog3-short_log");
+        String actual = sut.dayWithMostIPVisits(sut.iPsForDays());
+        System.out.println("Day with most IP visits is " + actual);
+    }
+    
+    public void testDayIpsWithMostVisitsOnDay()
+    {
+        LogAnalyzer sut = new LogAnalyzer();
+        sut.readFile("testing/weblog3-short_log");
+        String strDate = "Sep 30";
+        ArrayList<String> actual = sut.iPsWithMostVisitsOnDay(sut.iPsForDays(), strDate);
+        System.out.println("IPs with most visits on day " + strDate + " " + actual);
+    }
 }
