@@ -89,7 +89,6 @@ public class QuakeSortInPlace
 
     public void sortByLargestDepth(ArrayList<QuakeEntry> in)
     {
-        //for (int i = 0; i < 70; i++) {
         for (int i = 0; i < in.size(); i++) {
             int maxIdx = getLargestDepth(in, i);
             QuakeEntry current = in.get(i);
@@ -125,7 +124,7 @@ public class QuakeSortInPlace
         }
     }
     
-    private boolean checkInSortedOrder(ArrayList<QuakeEntry> quakes)
+    public boolean checkInSortedOrder(ArrayList<QuakeEntry> quakes)
     {
         if (quakes.isEmpty()) return true;
         
