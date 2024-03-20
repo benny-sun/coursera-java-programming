@@ -11,3 +11,6 @@ data/
 # Quiz files
 quiz/
 Quiz*
+
+# OS files
+__MACOSX/
