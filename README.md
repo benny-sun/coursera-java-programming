@@ -1,3 +1,6 @@
-Java Programming and Software Engineering Fundamentals Specialization offered by Duke University
+[Java Programming and Software Engineering Fundamentals Specialization](https://www.coursera.org/specializations/java-programming) offered by Duke University
 
-https://www.coursera.org/specializations/java-programming
+[Build a Recommendation System](https://www.coursera.org/learn/java-programming-recommender#recommendations)
+
+![image](https://github.com/benny-sun/coursera-java-programming/assets/22260295/8b8dabcb-8565-4b88-83dd-997ced365c59)
+
