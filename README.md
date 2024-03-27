@@ -4,3 +4,4 @@
 
 ![image](https://github.com/benny-sun/coursera-java-programming/assets/22260295/8b8dabcb-8565-4b88-83dd-997ced365c59)
 
+[Specialization Certificate](https://www.coursera.org/account/accomplishments/specialization/7ZG5VUS3X3T7)
